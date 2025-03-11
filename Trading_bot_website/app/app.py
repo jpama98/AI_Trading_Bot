@@ -8,10 +8,12 @@ COINBASE_API_URL = "https://api.coinbase.com/v2/prices/BTC-USD/spot"
 NEWS_API_KEY = "your_news_api_key"
 
 # Home Route
-@app.route("/")
+@app.route('/')
 def home():
-    return "Hello, Flask is running!"
+    return render_template('index.html')
 
+if __name__ == '__main__':
+    app.run(debug=True)
 
 # Fetch Real-Time Crypto Price
 @app.route('/crypto_price')
