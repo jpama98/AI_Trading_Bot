@@ -3,13 +3,14 @@ import os
 from flask import Flask, render_template
 
 # Ensure the Trading_bot_website directory is in the system path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'Trading_bot_website')))
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-# Import Flask app properly
+# Correct import statement
 try:
-    from Trading_bot_website.app import create_app  # Ensure correct import
-except ImportError:
-    print("⚠️ Module 'app.create_app' not found! Check your folder structure.")
+    from Trading_bot_website.app.create_app import create_app  # ✅ Correct path
+except ImportError as e:
+    print(f"⚠️ ImportError: {e}")
+    print("Check if 'Trading_bot_website/app/create_app.py' exists and '__init__.py' is present.")
     sys.exit(1)
 
 # Initialize Flask app
