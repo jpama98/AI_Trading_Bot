@@ -1,5 +1,12 @@
 from flask import Blueprint, jsonify
 import requests
+import sys
+
+sys.path.insert(0, r"C:\Users\jomal\OneDrive\Desktop\Programming\Project\AI_Trading_Bot\AI_TRADING_BOT")
+from Trading_bot_website.app import create_app
+
+app = create_app()
+
 
 api = Blueprint("api", __name__)
 
