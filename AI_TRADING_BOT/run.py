@@ -1,7 +1,13 @@
 import sys
 import os
 from flask import Flask, render_template
+from my_app import create_app
 
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(debug=True)
 # Ensure the Trading_bot_website directory is in the system path
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
