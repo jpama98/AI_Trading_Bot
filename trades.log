@@ -44,3 +44,41 @@ Unauthorized
 Unauthorized
 2025-03-10 22:47:04,572 - INFO - 🧠 Sentiment Score: 0
 2025-03-10 22:47:04,876 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:18:06,723 - INFO - 🚀 Bot is now running. Checking trades every 1 minute...
+2025-03-10 23:19:06,945 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:19:06,945 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:19:07,152 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:20:07,239 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:20:07,239 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:20:07,411 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:21:07,482 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:21:07,482 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:21:07,607 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:22:07,694 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:22:07,694 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:22:07,875 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:23:07,949 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:23:07,951 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:23:08,155 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:24:08,243 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:24:08,243 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:24:08,406 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:25:08,496 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:25:08,497 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:25:08,725 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:26:08,830 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+2025-03-10 23:26:08,831 - INFO - 🧠 Sentiment Score: 0
+2025-03-10 23:26:09,048 - INFO - ⏳ No trade executed. Conditions not met.
+2025-03-10 23:27:09,138 - ERROR - Error analyzing Twitter sentiment: 401 Unauthorized
+Unauthorized
+```         
+</details>
+
