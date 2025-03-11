@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Bot Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">🚀 Trading Bot Dashboard</h1>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-4">
+        <!-- Crypto Price Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Current Crypto Price</h2>
+            <p class="text-3xl font-bold text-green-600">$<span id="crypto-price">Loading...</span></p>
+        </div>
+
+        <!-- Sentiment Score Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Sentiment Score</h2>
+            <p class="text-3xl font-bold" id="sentiment-score">Loading...</p>
+        </div>
+
+        <!-- News Card -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Latest News</h2>
+            <ul id="news-list" class="list-disc pl-5 text-gray-700">
+                <li>Loading latest news...</li>
+            </ul>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+            <h2 class="text-xl font-semibold mb-4">📈 Price Trends</h2>
+            <canvas id="priceChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 p-4 text-white text-center mt-6">
+        <p>&copy; 2024 Trading Bot. All rights reserved.</p>
+    </footer>
+
+    <!-- Load External JavaScript -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
+
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+
+<script>
+    async function fetchData() {
+        let priceResponse = await fetch("/api/crypto_price");
+        let sentimentResponse = await fetch("/api/sentiment");
+        let newsResponse = await fetch("/api/news");
+    
+        let priceData = await priceResponse.json();
+        let sentimentData = await sentimentResponse.json();
+        let newsData = await newsResponse.json();
+    
+        document.getElementById("crypto-price").innerHTML = `$${priceData.crypto_price}`;
+        document.getElementById("sentiment-score").innerHTML = sentimentData.sentiment;
+        document.getElementById("latest-news").innerHTML = newsData.news.map(n => `<li>${n}</li>`).join("");
+    }
+    
+    // Fetch data every 5 seconds
+    setInterval(fetchData, 5000);
+    fetchData();
+    </script>
+    
+```
