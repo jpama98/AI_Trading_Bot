@@ -2,6 +2,7 @@ import sys
 import os
 from flask import Flask, render_template
 
+
 # Ensure the Trading_bot_website directory is in the system path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'Trading_bot_website')))
 
