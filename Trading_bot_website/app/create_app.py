@@ -1,15 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask
 
 def create_app():
     app = Flask(__name__)
 
-    # Import Blueprint using a relative import (AFTER app is initialized)
-    from .routes import api  
-    app.register_blueprint(api)
+    # Load configurations, extensions, etc.
+    app.config.from_object('config.Config')
 
-    @app.route("/")
-    def home():
-        return render_template("index.html")
+    # Import and register routes
+    from .routes import api
+    app.register_blueprint(api)
 
     return app
 
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True) # Run the application in debug mode
